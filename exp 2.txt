@@ -1,0 +1,110 @@
+mysql> alter table faculty add check(gender='m'or'f');
+ERROR 1046 (3D000): No database selected
+mysql> Query OK, 0 rows affected (0.01 sec)
+    -> Records: 0  Duplicates: 0  Warnings: 0
+    ->
+    -> mysql> desc faculty;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mys' at line 1
+mysql> +--------------------+-------------+------+-----+---------+-------+
+    -> | Field              | Type        | Null | Key | Default | Extra |
+    -> +--------------------+-------------+------+-----+---------+-------+
+    -> | faculty_identifier | varchar(4)  | NO   | PRI |         |       |
+    -> | faculty_name       | varchar(15) | YES  |     | NULL    |       |
+    -> | gender             | varchar(5)  | YES  |     | NULL    |       |
+    -> | date_of_birth      | int(11)     | YES  |     | NULL    |       |
+    -> | mobile_number      | int(11)     | NO   |     | NULL    |       |
+    -> | date_of_join       | int(11)     | YES  |     | NULL    |       |
+    -> +--------------------+-------------+------+-----+---------+-------+
+    -> 6 rows in set (0.01 sec)
+    ->
+    -> mysql>alter table faculty add check(faculty_identifier>=1&&faculty_identifier<=6);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '+--------------------+-------------+------+-----+---------+-------+
+| Field     ' at line 1
+mysql> Query OK, 0 rows affected (0.02 sec)
+    -> Records: 0  Duplicates: 0  Warnings: 0
+    ->
+    -> mysql> desc faculty;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mys' at line 1
+mysql> +--------------------+-------------+------+-----+---------+-------+
+    -> | Field              | Type        | Null | Key | Default | Extra |
+    -> +--------------------+-------------+------+-----+---------+-------+
+    -> | faculty_identifier | varchar(4)  | NO   | PRI |         |       |
+    -> | faculty_name       | varchar(15) | YES  |     | NULL    |       |
+    -> | gender             | varchar(5)  | YES  |     | NULL    |       |
+    -> | date_of_birth      | int(11)     | YES  |     | NULL    |       |
+    -> | mobile_number      | int(11)     | NO   |     | NULL    |       |
+    -> | date_of_join       | int(11)     | YES  |     | NULL    |       |
+    -> +--------------------+-------------+------+-----+---------+-------+
+    -> 6 rows in set (0.02 sec)
+    ->  mysql> alter table faculty add column first_name varchar(10);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '+--------------------+-------------+------+-----+---------+-------+
+| Field     ' at line 1
+mysql> Query OK, 0 rows affected (0.02 sec)
+    -> Records: 0  Duplicates: 0  Warnings: 0
+    ->
+    -> mysql> desc faculty;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mys' at line 1
+mysql> +--------------------+-------------+------+-----+---------+-------+
+    -> | Field              | Type        | Null | Key | Default | Extra |
+    -> +--------------------+-------------+------+-----+---------+-------+
+    -> | faculty_identifier | varchar(4)  | NO   | PRI |         |       |
+    -> | faculty_name       | varchar(15) | YES  |     | NULL    |       |
+    -> | gender             | varchar(5)  | YES  |     | NULL    |       |
+    -> | date_of_birth      | int(11)     | YES  |     | NULL    |       |
+    -> | mobile_number      | int(11)     | NO   |     | NULL    |       |
+    -> | date_of_join       | int(11)     | YES  |     | NULL    |       |
+    -> | first_name         | varchar(10) | YES  |     | NULL    |       |
+    -> +--------------------+-------------+------+-----+---------+-------+
+    -> 7 rows in set (0.00 sec)
+    ->
+    -> mysql>  alter table faculty add constraint faculty_name_unique unique(first_name);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '+--------------------+-------------+------+-----+---------+-------+
+| Field     ' at line 1
+mysql> Query OK, 0 rows affected (0.01 sec)
+    -> Records: 0  Duplicates: 0  Warnings: 0
+    ->
+    -> mysql> desc faculty;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mys' at line 1
+mysql> +--------------------+-------------+------+-----+---------+-------+
+    -> | Field              | Type        | Null | Key | Default | Extra |
+    -> +--------------------+-------------+------+-----+---------+-------+
+    -> | faculty_identifier | varchar(4)  | NO   | PRI |         |       |
+    -> | faculty_name       | varchar(15) | YES  |     | NULL    |       |
+    -> | gender             | varchar(5)  | YES  |     | NULL    |       |
+    -> | date_of_birth      | int(11)     | YES  |     | NULL    |       |
+    -> | mobile_number      | int(11)     | NO   |     | NULL    |       |
+    -> | date_of_join       | int(11)     | YES  |     | NULL    |       |
+    -> | first_name         | varchar(10) | YES  | UNI | NULL    |       |
+    -> +--------------------+-------------+------+-----+---------+-------+
+    -> 7 rows in set (0.01 sec)
+    -> mysql>  alter table dept add foreign key(dept_no) references course(semno);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '+--------------------+-------------+------+-----+---------+-------+
+| Field     ' at line 1
+mysql> Query OK, 0 rows affected (0.23 sec)
+    -> Records: 0  Duplicates: 0  Warnings: 0
+    ->
+    -> mysql> desc dept;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Query OK, 0 rows affected (0.23 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mys' at line 1
+mysql> +-----------+---------+------+-----+---------+-------+
+    -> | Field     | Type    | Null | Key | Default | Extra |
+    -> +-----------+---------+------+-----+---------+-------+
+    -> | dept_name | char(1) | YES  |     | NULL    |       |
+    -> | dept_no   | int     | YES  | MUL | NULL    |       |
+    -> | dept_head | char(1) | YES  |     | NULL    |       |
+    -> +-----------+---------+------+-----+---------+-------+
+    -> 3 rows in set (0.07 sec)
